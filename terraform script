@@ -1,0 +1,10 @@
+/infrastructure
+  ├── dev
+  │   └── main.tf
+  ├── qa
+  │   └── main.tf
+  ├── uat
+  │   └── main.tf
+  ├── prod
+  │   └── main.tf
+  └── variables.tf
