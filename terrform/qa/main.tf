@@ -1,18 +1,18 @@
 # /infrastructure/qa/main.tf
 provider "aws" {
-  region = var.region
+  region = us-east-1
 }
 
 module "vpc" {
   source = "../modules/vpc"
-  cidr_block = var.vpc_cidr
+  cidr_block = 10.0.0.0/16
 }
 
 resource "aws_instance" "qa_instance" {
-  ami             = var.ami_id
-  instance_type   = var.instance_type
+  ami             = ami-123
+  instance_type   = m6.large
   availability_zone = "us-east-1b"
-  subnet_id       = module.vpc.subnet_id
+  subnet_id       = sub-123
 
   tags = {
     Name = "QA Instance"
