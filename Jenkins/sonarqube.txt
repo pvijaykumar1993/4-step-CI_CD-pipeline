@@ -1,0 +1,11 @@
+stage('SonarQube Analysis') {
+    steps {
+        script {
+            sonarQubeScanner(
+                server: 'SonarQube',
+                projectKey: 'your-project-key',
+                projectName: 'your-project-name'
+            )
+        }
+    }
+}
